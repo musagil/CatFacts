@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/repoListFragment">
+
+    <fragment
+        android:id="@+id/repoListFragment"
+        android:name="com.onfido.techtask.factlist.FactListFragment"
+        android:label="Repo List" />
+
+    <fragment
+        android:id="@+id/factDetailFragment"
+        android:name="com.onfido.techtask.factdetail.FactDetailFragment"
+        android:label="Repo Detail" />
+</navigation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fact_list_title">@string/app_name</string>
+    <string name="fact_list_menu_clear_all_tasks">Clear all</string>
+    <string name="fact_list_search">Search</string>
+    <string name="fact_no_result">Result is empty</string>
+</resources>

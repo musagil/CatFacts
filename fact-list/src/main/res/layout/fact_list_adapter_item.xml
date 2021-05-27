@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewBinding"
+            type="com.onfido.techtask.factlist.FactListItemViewBinding" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_spacing"
+        android:layout_marginEnd="@dimen/base_spacing"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:onClickListener="@{viewBinding.itemClickListener}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/base_spacing"
+            android:paddingHorizontal="@dimen/base_spacing">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:text="@{viewBinding.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintEnd_toStartOf="@id/favorite"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/lorem" />
+
+            <ImageView
+                android:id="@+id/favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{viewBinding.onFavoriteClick}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text"
+                app:setResIcon="@{viewBinding.favoriteIcon}" />
+
+            <ImageView
+                android:id="@+id/verified"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/base_spacing"
+                android:paddingEnd="@dimen/base_spacing"
+                android:src="@drawable/ic_verified"
+                android:visibility="@{viewBinding.verifiedIconVisibility}"
+                app:layout_constraintEnd_toStartOf="@id/newFact"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text" />
+
+            <ImageView
+                android:id="@+id/newFact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/base_spacing"
+                android:src="@drawable/ic_new"
+                android:visibility="@{viewBinding.newIconVisibility}"
+                app:layout_constraintStart_toEndOf="@id/verified"
+                app:layout_constraintTop_toBottomOf="@id/text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

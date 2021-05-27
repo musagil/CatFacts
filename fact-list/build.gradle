@@ -1,0 +1,12 @@
+apply from: configFile('android-ui-library-config.gradle')
+
+android {
+    resourcePrefix 'fact_list_'
+}
+
+dependencies {
+    implementation project(':fact-data')
+
+    kapt deps.moshi.codegen
+    implementation deps.moshi.core
+}
